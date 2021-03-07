@@ -173,6 +173,11 @@ class SpriteMaker {
                 data[i+1] = light[1];
                 data[i+2] = light[2];
                 data[i+3] = 255;
+            }else if(r<251){
+                data[i+0] = light[0];
+                data[i+1] = light[1];
+                data[i+2] = light[2];
+                data[i+3] = 255;
             } else {
                 data[i+0] = 255;
                 data[i+1] = 255;
