@@ -62,6 +62,34 @@ window.onload = () => {
                 }
                 users.push(new UserObject(userstate['display-name'], char_config));
             }
+            else if (userstate['display-name'].toLowerCase() === 'sociablesteve') {
+
+                    const char_config =  {
+                        hair: 5,
+                        eyes: 4,
+                        mouth: 2,
+                        ears: 3,
+                        torso: 6,
+                        hands: 0,
+                        gColorMode: '012',
+                        color: 'rustic gb palette by kerrie lake'
+                    }
+                    users.push(new UserObject(userstate['display-name'], char_config));
+            }
+            else if (userstate['display-name'].toLowerCase() === 'rawwwrs') {
+
+                    const char_config =  {
+                        hair: 16,
+                        eyes: 8,
+                        mouth: 0,
+                        ears: 6,
+                        torso: 1,
+                        hands: 0,
+                        gColorMode: '012',
+                        color: 'jb4 palette by haretro for his game jet boy'
+                    }
+                    users.push(new UserObject(userstate['display-name'], char_config));
+            }
             else {
                 users.push(new UserObject(userstate['display-name']));
             }
