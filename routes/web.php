@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SpriteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,10 +24,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(function () {
+    Route::resource('sprites', SpriteController::class);
+});
+
+
 
 Route::get('sprite-customiser', function () {
     return view ('sprite-customiser');
 });
+
+
+
 
 Route::prefix('stream-overlays')->group(function () {
     Route::get('sprites',function () {
