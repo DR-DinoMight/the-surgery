@@ -18,7 +18,7 @@ var ANIMS = {
   run_back: a("1,4,1f,4f"),
   run_left: a("2,5"),
   run_right: a("2f,5f"),
-  idle: a("0,0f")
+  idle: a("3,3f")
 }
 var ANIM_NAMES = Object.keys(ANIMS);
 var currentAnimName = "run_front";
