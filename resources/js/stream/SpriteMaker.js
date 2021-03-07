@@ -177,7 +177,7 @@ class SpriteMaker {
                 data[i+0] = 255;
                 data[i+1] = 255;
                 data[i+2] = 255;
-                data[i+3] = 255;
+                data[i+3] = 0;
             }
         }
         this.context.putImageData(imageData,0,0);
