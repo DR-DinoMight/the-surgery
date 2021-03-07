@@ -124,6 +124,15 @@ class AvatarObject {
         this.message = message;
     }
 
+    setDirection(direction, time) {
+        let dateNow = Date.now();
+        this.direction = direction;
+        if (time) {
+            dateNow += time;
+        }
+        this.lastAnimationChange = dateNow;
+    }
+
     displayMessage(context, message) {
         this.drawTextBG(context, message || this.message);
     }

@@ -69,7 +69,39 @@ window.onload = () => {
             // console.log(users);
         }
         else{
-            user.updateActivity();
+            let action,
+                time;
+            if (message.startsWith('!')) {
+
+                if (message.startsWith('!dance')) {
+                    action = 'rotate';
+                    time = parseInt(message.replace('!dance','').trim());
+                } else if (message.startsWith('!mleft')) {
+                    time = parseInt(message.replace('!mleft','').trim());
+                    action ='left';
+                } else if (message.startsWith('!mright')) {
+                    time = parseInt(message.replace('!mright','').trim());
+                    action = 'right';
+                }else if (message.startsWith('!mup')) {
+                    time = parseInt(message.replace('!mup','').trim());
+                    action = 'up';
+                }else if (message.startsWith('!mdown')) {
+                    time = parseInt(message.replace('!mdown','').trim());
+                    action = 'down';
+                }else if (message.startsWith('!idle')) {
+                    time = parseInt(message.replace('!idle','').trim());
+                    action = 'idle';
+                }
+
+                if (Number.isNaN(time) || time > 999999  || time < 0){
+                    time = 1000;
+                }
+
+                user.updateActivity(action, time);
+            }
+            else {
+                user.updateActivity();
+            }
         }
     });
 

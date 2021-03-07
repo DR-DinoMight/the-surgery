@@ -12,8 +12,13 @@ class UserObject {
         this.deathTime = this.lastTimeSeen + DEATHRATE;
     }
 
-    updateActivity() {
+    updateActivity(direction, time) {
         this.lastTimeSeen = Date.now();
+
+        if (direction) {
+            this.avatar.setDirection(direction, time);
+        }
+
         this.deathTime = this.lastTimeSeen + DEATHRATE;
     }
 
