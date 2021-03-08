@@ -36,61 +36,10 @@ window.onload = () => {
         // console.log(!user);
         if (!user) {
 
-            if (userstate['display-name'].toLowerCase() == 'whitep4nth3r') {
-                const char_config =  {
-                    hair: 1,
-                    eyes: 4,
-                    mouth: 5,
-                    ears: 6,
-                    torso: 6,
-                    hands: 0,
-                    gColorMode: '013',
-                    color: 'panthers'
-                }
-                users.push(new UserObject(userstate['display-name'],char_config));
-            }
-            else if (userstate['display-name'].toLowerCase() == 'dr_dinomight') {
-                const char_config =  {
-                    hair: 10,
-                    eyes: 14,
-                    mouth: 7,
-                    ears: 5,
-                    torso: 6,
-                    hands: 0,
-                    gColorMode: '023',
-                    color: 'dr_dinos'
-                }
-                users.push(new UserObject(userstate['display-name'], char_config));
-            }
-            else if (userstate['display-name'].toLowerCase() === 'sociablesteve') {
-
-                    const char_config =  {
-                        hair: 5,
-                        eyes: 4,
-                        mouth: 2,
-                        ears: 3,
-                        torso: 6,
-                        hands: 0,
-                        gColorMode: '012',
-                        color: 'rustic gb palette by kerrie lake'
-                    }
-                    users.push(new UserObject(userstate['display-name'], char_config));
-            }
-            else if (userstate['display-name'].toLowerCase() === 'rawwwrs') {
-
-                    const char_config =  {
-                        hair: 16,
-                        eyes: 8,
-                        mouth: 0,
-                        ears: 6,
-                        torso: 1,
-                        hands: 0,
-                        gColorMode: '012',
-                        color: 'jb4 palette by haretro for his game jet boy'
-                    }
-                    users.push(new UserObject(userstate['display-name'], char_config));
-            }
-            else {
+            var prefectedChannelsUser = prefectedChannels[userstate['display-name'].toLowerCase()];
+           if (prefectedChannels[userstate['display-name'].toLowerCase()]) {
+                users.push(new UserObject(prefectedChannelsUser["twitch_username"], prefectedChannelsUser["sprite_data"]));
+            }else {
                 users.push(new UserObject(userstate['display-name']));
             }
 

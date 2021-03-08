@@ -25,6 +25,12 @@
     </canvas>
     <script src="https://cdn.rawgit.com/adriancooney/console.image/c9e6d4fd/console.image.min.js"></script>
     <script src="/js/tmi.js" type="module"></script>
+
+    <script>
+        var prefectedChannels = @json($sprites);
+
+    </script>
+
     <script src="/js/sprite.js" type="module"></script>
 </body>
 </html>

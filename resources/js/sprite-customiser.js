@@ -245,14 +245,14 @@ function updateOutCanvas() {
 
   var output = document.getElementById('code');
   output.innerText = ` {
-    hair: ${document.getElementById('hairInput').value},
-    eyes: ${document.getElementById('eyesInput').value},
-    mouth: ${document.getElementById('mouthInput').value},
-    ears: ${document.getElementById('earsInput').value},
-    torso: ${document.getElementById('torsoInput').value},
-    hands: 0,
-    gColorMode: '${document.getElementById('colormode').innerText}',
-    color: '${document.getElementById('colorinfo').innerText.toLowerCase()}'
+    "hair": ${document.getElementById('hairInput').value},
+    "eyes": ${document.getElementById('eyesInput').value},
+    "mouth": ${document.getElementById('mouthInput').value},
+    "ears": ${document.getElementById('earsInput').value},
+    "torso": ${document.getElementById('torsoInput').value},
+    "hands": 0,
+    "gColorMode": "${document.getElementById('colormode').innerText}",
+    "color": "${document.getElementById('colorinfo').innerText.toLowerCase()}"
 }`
 
   // document.getElementById('serialized_input').value = s;

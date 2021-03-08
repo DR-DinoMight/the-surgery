@@ -39,7 +39,8 @@ class SpriteMaker {
         this.context = this.canvas.getContext('2d');
         this.loading = true;
         if (char_config) {
-            this.char_config = char_config;
+            this.char_config = JSON.parse(char_config);
+            console.log(this.char_config);
         }
         // console.log(this.chosenColor, color, COLORS);
         // console.log('this.chosenColor', this.chosenColor)

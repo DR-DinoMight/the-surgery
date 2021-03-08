@@ -105,13 +105,15 @@ class AvatarObject {
             this.direction = 'down'
             // this.lastAnimationChange = Date.now();
         }
-        else if (this.x < 5) {
-            this.direction = 'right'
+        else if (this.x <0 && this.direction == 'left') {
+            // this.direction = 'right'
+            this.x = context.canvas.width-5;
             // this.lastAnimationChange = Date.now();
 
         }
-        else if (this.x + SPRITE_SIZE > context.canvas.width-5) {
-            this.direction = 'left'
+        else if (this.x + SPRITE_SIZE > context.canvas.width && this.direction == 'right') {
+            this.x = 0;
+
             // this.lastAnimationChange = Date.now();
         }
 

@@ -39,6 +39,9 @@ Route::get('sprite-customiser', function () {
 
 Route::prefix('stream-overlays')->group(function () {
     Route::get('sprites',function () {
-        return view('stream_overlays.sprites');
+
+        $sprites = array_column(App\Models\Sprite::all()->toArray(), null, 'twitch_username');
+
+        return view('stream_overlays.sprites', ['sprites' => $sprites]);
     });
 });

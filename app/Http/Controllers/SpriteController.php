@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateSpriteRequest;
 use App\Models\Sprite;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,11 @@ class SpriteController extends Controller
         return view('sprites.create');
     }
 
-    public function store($request) {
-        // store the sprite
+    public function store(CreateSpriteRequest $request) {
+        $validated =  $request->validated();
+        $sprite = new Sprite($validated);
+        $sprite->last_fetched_data_at = now();
+        $sprite->save();
     }
 
     public function destroy($sprite, $request) {
