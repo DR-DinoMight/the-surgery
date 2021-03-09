@@ -10,6 +10,7 @@ const PARTS_MAX = {
 let COLORS = {
     'dr_dinos': [ "#181B29", "#81F900", "#FFB626", "#315F00"],
     'panthers': [ "#181B29", "#F11012", "#FFB626", "#F2F2F2"],
+    "BATTLEBOT by Luce Carter": ["#181B29", "#FFA03A", "#0F2745", "#FFA03A"],
     "basic" : ["#000000", "#787878", "#e8e8e8", "#ffffff"],
     "ice cream gb palette by kerrie lake": ["#7c3f58", "#eb6b6f", "#f9a875", "#fff6d3"],
     "mist gb palette by kerrie lake": ["#2d1b00", "#1e606e", "#5ab9a8", "#c4f0c2"],
@@ -23,7 +24,8 @@ let COLORS = {
     "jb4 palette by haretro for his game jet boy": [ "#260016", "#ed008c", "#00bff3", "#daf3ec" ],
     "sweet guaranã palette by madpezkoh": [ "#253b46", "#18865f", "#61d162", "#ebe7ad" ],
     "grafxkid gameboy pocket (green) palette by grafxkid": [ "#4c625a", "#7b9278", "#abc396", "#dbf4b4" ],
-    "yellow mellow": ["#181b29", "#b3760a", "#ffb626", "#cc9900"]
+    "yellow mellow": ["#181b29", "#b3760a", "#ffb626", "#cc9900"] 
+
 }
 
 var gParts = {}
