@@ -26,8 +26,15 @@
     <script src="https://cdn.rawgit.com/adriancooney/console.image/c9e6d4fd/console.image.min.js"></script>
     <script src="/js/tmi.js" type="module"></script>
 
-    <script>
+    <script type="application/javascript">
         var prefectedChannels = @json($sprites);
+
+        let cInterval = setInterval(async () => {
+            var resp = await fetch('{{route('xhr.sprite_config')}}');
+            prefectedChannels = await resp.json();
+            console.log(prefectedChannels);
+            // prefectedChannels = await fetch('{{route('xhr.sprite_config')}}')
+        }, 10000);
 
     </script>
 

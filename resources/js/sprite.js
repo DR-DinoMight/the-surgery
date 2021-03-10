@@ -48,6 +48,7 @@ window.onload = () => {
         else{
             let action,
                 time;
+
             if (message.startsWith('!')) {
 
                 if (message.startsWith('!dance')) {
@@ -74,10 +75,10 @@ window.onload = () => {
                     time = 1000;
                 }
 
-                user.updateActivity(action, time);
-            }
-            else {
-                user.updateActivity();
+                user.updateActivity(
+                    action,
+                    time
+                );
             }
         }
     });
@@ -103,8 +104,9 @@ const update = () => {
     let newUser = [];
     users.forEach( (user) =>{
         if (user.deathTime >= Date.now()){
-            newUser.push(user)
-            user.update(true);
+            newUser.push(user);
+            var config = prefectedChannels[user.username];
+            user.update(true, config);
         }
     });
     users = newUser;

@@ -23,7 +23,8 @@ let COLORS = {
     "jb4 palette by haretro for his game jet boy": [ "#260016", "#ed008c", "#00bff3", "#daf3ec" ],
     "sweet guaranã palette by madpezkoh": [ "#253b46", "#18865f", "#61d162", "#ebe7ad" ],
     "grafxkid gameboy pocket (green) palette by grafxkid": [ "#4c625a", "#7b9278", "#abc396", "#dbf4b4" ],
-    "yellow mellow": ["#181b29", "#b3760a", "#ffb626", "#cc9900"]
+    "yellow mellow": ["#181b29", "#b3760a", "#ffb626", "#cc9900"],
+    "sql by matty_twoshoes": ["#755ACD", "#000000", "#82E4C6", "#000000"]
 }
 
 var gParts = {}
@@ -40,7 +41,6 @@ class SpriteMaker {
         this.loading = true;
         if (char_config) {
             this.char_config = JSON.parse(char_config);
-            console.log(this.char_config);
         }
         // console.log(this.chosenColor, color, COLORS);
         // console.log('this.chosenColor', this.chosenColor)
@@ -56,7 +56,7 @@ class SpriteMaker {
             gParts['torso'] = this.char_config.torso;
             this.chosenColor = COLORS[this.char_config.color];
             gColorMode = this.char_config.gColorMode;
-            console.log(this.chosenColor, this.char_config.color, COLORS);
+            console.log('pred', this.char_config,this.chosenColor, this.char_config.color, COLORS);
         }
         else {
             await this.randomiseAll();

@@ -153,8 +153,10 @@ var COLORS = [
   [ "#253b46", "#18865f", "#61d162", "#ebe7ad", "SWEET GUARANÃ PALETTE by MadPezkoh" ],
   [ "#4c625a", "#7b9278", "#abc396", "#dbf4b4", "GRAFXKID GAMEBOY POCKET (GREEN) PALETTE by GrafxKid" ],
   [ "#181B29", "#81F900", "#FFB626", "#315F00", "DR DINOS" ],
-  [ "#181B29", "#F11012", "#FFB626", "#F2F2F2", "P4NTH3RS" ],
+  [ "#181B29", "#F11012", "#FFB626", "#F2F2F2", "PANTHERS" ],
   [ "#181b29", "#b3760a", "#ffb626", "#cc9900", "YELLOW MELLOW" ],
+  ["#755ACD", "#000000", "#82E4C6", "#000000", "SQL by matty_twoshoes"]
+
 
 ];
 

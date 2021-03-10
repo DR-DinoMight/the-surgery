@@ -30,5 +30,11 @@ class SpriteController extends Controller
     public function destroy($sprite, $request) {
         // delete the sprite
     }
+
+    public function sprite_config() {
+         $sprites = array_column(Sprite::all()->toArray(), null, 'twitch_username');
+
+         return response()->json($sprites, 200);
+    }
 }
 

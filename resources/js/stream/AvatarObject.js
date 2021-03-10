@@ -39,6 +39,8 @@ class AvatarObject {
         this.numberOfFrames = ANIMS[this.direction].length - 1; //number of frames(sprites) in the spritesheet, default 1
         //current frame pointer
         this.frameIndex = 0;
+
+        this.require_redraw = false;
     }
 
     async load() {
@@ -74,6 +76,14 @@ class AvatarObject {
     }
 
     async update() {
+
+        if (this.require_redraw) {
+            console.log("here redrawing");
+            await this.load();
+            this.require_redraw = false;
+        }
+
+
         if(Date.now() - this.lastUpdate >= this.timePerFrame) {
             this.frameIndex++;
             if(this.frameIndex > this.numberOfFrames) {

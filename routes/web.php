@@ -35,8 +35,6 @@ Route::get('sprite-customiser', function () {
 });
 
 
-
-
 Route::prefix('stream-overlays')->group(function () {
     Route::get('sprites',function () {
 
@@ -44,4 +42,8 @@ Route::prefix('stream-overlays')->group(function () {
 
         return view('stream_overlays.sprites', ['sprites' => $sprites]);
     });
+});
+
+Route::prefix('xhr')->group(function() {
+    Route::get('sprite-config', [ SpriteController::class, 'sprite_config'])->name('xhr.sprite_config');
 });

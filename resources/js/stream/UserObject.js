@@ -10,9 +10,10 @@ class UserObject {
         this.avatar.setMessage(this.username);
         this.lastTimeSeen = Date.now();
         this.deathTime = this.lastTimeSeen + DEATHRATE;
+        this.lastGenerate = Date.now();
     }
 
-    updateActivity(direction, time) {
+    async updateActivity(direction, time,char_config = null) {
         this.lastTimeSeen = Date.now();
 
         if (direction) {
@@ -22,7 +23,12 @@ class UserObject {
         this.deathTime = this.lastTimeSeen + DEATHRATE;
     }
 
-    async update(displayDebug=false){
+    async update(displayDebug=false, config){
+        if (Date.parse(config.last_fetched_data_at) > this.lastGenerate) {
+            this.avatar.spriteSheetMaker.char_config = JSON.parse(config['sprite_data']);
+            this.avatar.require_redraw = true;
+            this.lastGenerate = Date.parse(config.last_fetched_data_at);
+        }
         await this.avatar.update();
     }
 }
