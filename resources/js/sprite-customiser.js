@@ -156,7 +156,7 @@ var COLORS = [
   [ "#181B29", "#F11012", "#FFB626", "#F2F2F2", "PANTHERS" ],
   [ "#181b29", "#b3760a", "#ffb626", "#cc9900", "YELLOW MELLOW" ],
   ["#755ACD", "#000000", "#82E4C6", "#000000", "SQL by matty_twoshoes"]
-
+  ["#181B29", "#FFA03A", "#0F2745", "#FFA03A", "BATTLEBOT by Luce Carter"],
 
 ];
 

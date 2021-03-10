@@ -10,6 +10,7 @@ const PARTS_MAX = {
 let COLORS = {
     'dr_dinos': [ "#181B29", "#81F900", "#FFB626", "#315F00"],
     'panthers': [ "#181B29", "#F11012", "#FFB626", "#F2F2F2"],
+    "battlebot by luce carter": ["#181B29", "#FFA03A", "#0F2745", "#FFA03A"],
     "basic" : ["#000000", "#787878", "#e8e8e8", "#ffffff"],
     "ice cream gb palette by kerrie lake": ["#7c3f58", "#eb6b6f", "#f9a875", "#fff6d3"],
     "mist gb palette by kerrie lake": ["#2d1b00", "#1e606e", "#5ab9a8", "#c4f0c2"],
