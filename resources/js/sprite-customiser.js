@@ -155,8 +155,8 @@ var COLORS = [
   [ "#181B29", "#81F900", "#FFB626", "#315F00", "DR DINOS" ],
   [ "#181B29", "#F11012", "#FFB626", "#F2F2F2", "PANTHERS" ],
   [ "#181b29", "#b3760a", "#ffb626", "#cc9900", "YELLOW MELLOW" ],
-  ["#755ACD", "#000000", "#82E4C6", "#000000", "SQL by matty_twoshoes"]
-  ["#181B29", "#FFA03A", "#0F2745", "#FFA03A", "BATTLEBOT by Luce Carter"],
+  ["#755ACD", "#000000", "#82E4C6", "#4c625a", "SQL by matty_twoshoes"],
+  ["#181B29", "#FFA03A", "#0F2745", "#787878", "BATTLEBOT by Luce Carter"],
 
 ];
 
