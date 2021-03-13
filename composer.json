@@ -17,7 +17,10 @@
         "laravel/jetstream": "^2.2",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.0"
+        "livewire/livewire": "^2.0",
+        "ratchet/pawl": "^0.3.5",
+        "react/react": "^1.1",
+        "romanzipp/laravel-twitch": "^4.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

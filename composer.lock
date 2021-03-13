@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8afea6d60cc53286bbc23e6fd0006c51",
+    "content-hash": "36bcf97df5f0998646d9d83708aa9889",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3478,6 +3478,59 @@
             "time": "2020-08-18T17:17:46+00:00"
         },
         {
+            "name": "ratchet/pawl",
+            "version": "v0.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ratchetphp/Pawl.git",
+                "reference": "89ec703c76dc893484a2a0ed44b48a37d445abd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ratchetphp/Pawl/zipball/89ec703c76dc893484a2a0ed44b48a37d445abd5",
+                "reference": "89ec703c76dc893484a2a0ed44b48a37d445abd5",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "^3.0 || ^2.0",
+                "php": ">=5.4",
+                "ratchet/rfc6455": "^0.3",
+                "react/socket": "^1.0 || ^0.8 || ^0.7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "reactivex/rxphp": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ratchet\\Client\\": "src"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Asynchronous WebSocket client",
+            "keywords": [
+                "Ratchet",
+                "async",
+                "client",
+                "websocket",
+                "websocket client"
+            ],
+            "support": {
+                "issues": "https://github.com/ratchetphp/Pawl/issues",
+                "source": "https://github.com/ratchetphp/Pawl/tree/master"
+            },
+            "time": "2020-07-17T15:32:47+00:00"
+        },
+        {
             "name": "ratchet/rfc6455",
             "version": "v0.3",
             "source": {
@@ -3998,6 +4051,56 @@
             "time": "2020-07-10T12:18:06+00:00"
         },
         {
+            "name": "react/react",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/reactphp.git",
+                "reference": "527e5cc6c88c85858b39f1a58e32f3173f5233c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/reactphp/zipball/527e5cc6c88c85858b39f1a58e32f3173f5233c0",
+                "reference": "527e5cc6c88c85858b39f1a58e32f3173f5233c0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.8",
+                "react/cache": "^1.0",
+                "react/dns": "^1.3",
+                "react/event-loop": "^1.0",
+                "react/http": "^1.0",
+                "react/promise": "^2.1 || ^1.2",
+                "react/promise-stream": "^1.1.1",
+                "react/promise-timer": "^1.6",
+                "react/socket": "^1.4",
+                "react/stream": "^1.0"
+            },
+            "require-dev": {
+                "clue/block-react": "^1.1",
+                "clue/stream-filter": "^1.3",
+                "phpunit/phpunit": "^7.0 || ^6.0 || ^5.7 || ^4.8.35"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "ReactPHP: Event-driven, non-blocking I/O with PHP.",
+            "homepage": "https://reactphp.org/",
+            "keywords": [
+                "asynchronous",
+                "reactor",
+                "reactphp"
+            ],
+            "support": {
+                "chat": "https://gitter.im/reactphp/reactphp",
+                "issues": "https://github.com/reactphp/reactphp/issues",
+                "source": "https://github.com/reactphp/reactphp/tree/v1.1.0"
+            },
+            "time": "2020-07-11T16:33:07+00:00"
+        },
+        {
             "name": "react/socket",
             "version": "v1.6.0",
             "source": {
@@ -4191,6 +4294,114 @@
                 "source": "https://github.com/ringcentral/psr7/tree/master"
             },
             "time": "2018-05-29T20:21:04+00:00"
+        },
+        {
+            "name": "romanzipp/laravel-twitch",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/romanzipp/Laravel-Twitch.git",
+                "reference": "394ff744b4734e5d99670a4b4c6ed2bbec446968"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/romanzipp/Laravel-Twitch/zipball/394ff744b4734e5d99670a4b4c6ed2bbec446968",
+                "reference": "394ff744b4734e5d99670a4b4c6ed2bbec446968",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0",
+                "illuminate/cache": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/console": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/support": "^5.5|^6.0|^7.0|^8.0",
+                "php": "^7.2|^8.0",
+                "romanzipp/php-cs-fixer-config": "^1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "mockery/mockery": "^1.3.2",
+                "orchestra/testbench": "^3.8|^4.0|^5.0|^6.0",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "romanzipp\\Twitch\\Providers\\TwitchServiceProvider"
+                    ],
+                    "aliases": {
+                        "Twitch": "romanzipp\\Twitch\\Facades\\Twitch"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "romanzipp\\Twitch\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "romanzipp",
+                    "email": "ich@ich.wtf",
+                    "homepage": "https://ich.wtf"
+                }
+            ],
+            "description": "Twitch PHP Wrapper for Laravel",
+            "support": {
+                "issues": "https://github.com/romanzipp/Laravel-Twitch/issues",
+                "source": "https://github.com/romanzipp/Laravel-Twitch/tree/4.0.2"
+            },
+            "time": "2021-01-15T19:52:15+00:00"
+        },
+        {
+            "name": "romanzipp/php-cs-fixer-config",
+            "version": "1.0.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/romanzipp/PHP-CS-Fixer-Config.git",
+                "reference": "96053962b762d99c547fef475fe77f7929f1b927"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/romanzipp/PHP-CS-Fixer-Config/zipball/96053962b762d99c547fef475fe77f7929f1b927",
+                "reference": "96053962b762d99c547fef475fe77f7929f1b927",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1|^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.12",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "romanzipp\\Fixer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "romanzipp",
+                    "email": "ich@ich.wtf",
+                    "homepage": "https://ich.wtf"
+                }
+            ],
+            "description": "Personal PHP-CS-Fixer Configuration",
+            "support": {
+                "issues": "https://github.com/romanzipp/PHP-CS-Fixer-Config/issues",
+                "source": "https://github.com/romanzipp/PHP-CS-Fixer-Config/tree/1.0.10"
+            },
+            "time": "2021-02-03T16:44:14+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
