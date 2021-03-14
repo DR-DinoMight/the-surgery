@@ -13,7 +13,7 @@ class UserObject {
         this.lastGenerate = Date.now();
     }
 
-    async updateActivity(direction, time,char_config = null) {
+    async updateActivity(direction = null, time = null,char_config = null) {
         this.lastTimeSeen = Date.now();
 
         if (direction) {

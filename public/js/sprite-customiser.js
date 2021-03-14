@@ -1,1 +1,298 @@
-(()=>{var e=document.getElementById("c"),t=document.getElementById("outc");t.width=96,t.height=16;var n=e.getContext("2d"),a=t.getContext("2d"),r=function(e){return e.split(",").map((function(e){return{x:parseInt(e),f:!!e.match("f")}}))},o={rotate:r("0,2f,1,2"),run_front:r("0,3,0f,3f"),run_back:r("1,4,1f,4f"),run_left:r("2,5"),run_right:r("2f,5f"),idle:r("3,3f")},c=Object.keys(o),d="run_front",u={loaded:0,requested:0};l("hair"),l("base"),l("eyes"),l("mouth"),l("ears"),l("torso"),l("hands");var f=!1;function l(e){var t=new Image;t.src="/imgs/spriteParts/"+e+".png?v="+Math.random(),u.requested++,u[e]=t,t.onload=function(){var e;u.loaded++,u.loaded===u.requested?f?h():(f=!0,B("eyes"),B("mouth"),B("ears"),B("torso"),B("hair"),function(){var e="color",t=document.getElementById(e+"Input");A(t,"colors"),t.setAttribute("min",0),t.setAttribute("max",g.length-1),t.value=0;var n=function(e){b=parseInt(e.target.value),console.log("COLOR UPDATE",e.target.value,b),document.getElementById("colorinfo").innerText=g[b][4],h()};n({target:t}),t.onchange=n,t.oninput=n}(),(e=document.getElementById("colormode")).onclick=function(){T="012"==T?"023":"023"==T?"013":"013"==T?"123":"012",e.innerText=T,h()},h(),s(),window.setInterval(i,16),document.getElementById("loading").innerText="",document.getElementById("root").className=""):document.getElementById("loading").innerText="loading... "+u.loaded+" / "+u.requested}}function i(){n.clearRect(0,0,16,16);var e=Date.now?Date.now():+new Date,a=parseInt(e/200),r=o[d],c=r[a%r.length];n.save(),c.f&&(n.translate(16,0),n.scale(-1,1)),n.drawImage(t,16*c.x,0,16,16,0,0,16,16),n.restore()}var m=document.getElementById("animbtn");function s(){m.innerText=d.replace("_"," ")}m.onclick=function(){var e=c.indexOf(d);d=c[e+1]||c[0],s()},e.onclick=m.onclick,document.getElementById("randomizebtn").onclick=function(){for(var e=document.getElementById("inputs").querySelectorAll("input"),t=0;t<e.length;t++){var n=e[t],a=n.id.replace("Input",""),r=E[a],o=Math.floor(Math.random()*(r+1));n.value=o,I[a]=o}h()};var E={eyes:16,mouth:8,ears:6,torso:6,hair:22},g=[["#000000","#787878","#e8e8e8","#ffffff","Basic"],["#7c3f58","#eb6b6f","#f9a875","#fff6d3","ICE CREAM GB PALETTE by Kerrie Lake"],["#2d1b00","#1e606e","#5ab9a8","#c4f0c2","MIST GB PALETTE by Kerrie Lake"],["#2c2137","#764462","#edb4a1","#a96868","RUSTIC GB PALETTE by Kerrie Lake"],["#20283d","#426e5d","#e5b083","#fbf7f3","EN4 PALETTE by ENDESGA"],["#4c1c2d","#d23c4e","#5fb1f5","#eaf5fa","GRAND DAD 4 PALETTE by Starlane"],["#181010","#84739c","#f7b58c","#ffefff","POKEMON (SGB) PALETTE"],["#2b2b26","#706b66","#a89f94","#e0dbcd","GRAFXKID GAMEBOY POCKET (GRAY) PALETTE by GrafxKid"],["#000000","#ff55ff","#55ffff","#ffffff","CGA PALETTE 1 (HIGH) PALETTE"],["#243137","#3f503f","#768448","#acb56b","NINTENDO GAMEBOY (ARNE) PALETTE by Arne"],["#260016","#ed008c","#00bff3","#daf3ec","JB4 PALETTE by Haretro for his game Jet Boy"],["#253b46","#18865f","#61d162","#ebe7ad","SWEET GUARANÃ PALETTE by MadPezkoh"],["#4c625a","#7b9278","#abc396","#dbf4b4","GRAFXKID GAMEBOY POCKET (GREEN) PALETTE by GrafxKid"],["#181B29","#81F900","#FFB626","#315F00","DR DINOS"],["#181B29","#F11012","#FFB626","#F2F2F2","PANTHERS"],["#181b29","#b3760a","#ffb626","#cc9900","YELLOW MELLOW"],["#755ACD","#000000","#82E4C6","#4c625a","SQL by matty_twoshoes"],["#181B29","#FFA03A","#0F2745","#787878","BATTLEBOT by Luce Carter"]],I={},b=0,T="012";function y(e,t,n){var r=null==I[e]?t:I[e];if(null!=r){n||0===n?a.drawImage(u[e],16*n,16*r,16,16,16*n,0,16,16):a.drawImage(u[e],0,16*r,96,16,0,0,96,16)}}function h(){a.clearRect(0,0,t.width,t.height),a.drawImage(u.base,0,0),y("hair"),y("torso"),y("ears"),y("mouth"),y("eyes"),y("hands",0),y("hair",null,4),y("hair",null,1);var e=a.getImageData(0,0,t.width,t.height),n=e.data;function r(e){return[parseInt(g[b][e].substr(1,2),16),parseInt(g[b][e].substr(3,2),16),parseInt(g[b][e].substr(5,2),16)]}for(var o=T.split("").map((function(e){return parseInt(e)})),c=r(o[0]),d=r(o[1]),f=r(o[2]),l=0;l<n.length;l+=4){var i=n[l];i<50?(n[l+0]=c[0],n[l+1]=c[1],n[l+2]=c[2],n[l+3]=255):i<180?(n[l+0]=d[0],n[l+1]=d[1],n[l+2]=d[2],n[l+3]=255):i<245?(n[l+0]=f[0],n[l+1]=f[1],n[l+2]=f[2],n[l+3]=255):(n[l+0]=255,n[l+1]=255,n[l+2]=255,n[l+3]=255)}a.putImageData(e,0,0);Object.keys(I).sort().map((function(e){return("00"+I[e]).slice(-2)})).join("");document.getElementById("code").innerText=' {\n    "hair": '.concat(document.getElementById("hairInput").value,',\n    "eyes": ').concat(document.getElementById("eyesInput").value,',\n    "mouth": ').concat(document.getElementById("mouthInput").value,',\n    "ears": ').concat(document.getElementById("earsInput").value,',\n    "torso": ').concat(document.getElementById("torsoInput").value,',\n    "hands": 0,\n    "gColorMode": "').concat(document.getElementById("colormode").innerText,'",\n    "color": "').concat(document.getElementById("colorinfo").innerText.toLowerCase(),'"\n}')}function A(e,t){var n=document.createElement("span");n.innerText=t,e.parentElement.prepend(n)}function B(e){var t=document.getElementById(e+"Input");A(t,e),t.setAttribute("min",0),t.setAttribute("max",E[e]),t.value=parseInt(Math.random()*(E[e]+1));var n=function(t){I[e]=parseInt(t.target.value),console.log("INPUT UPDATE",t.target.value,I),h()};n({target:t}),t.onchange=n,t.oninput=n}})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!*******************************************!*\
+  !*** ./resources/js/sprite-customiser.js ***!
+  \*******************************************/
+var showCanvas = document.getElementById('c'); //var outCanvas = document.createElement('canvas');
+
+var outCanvas = document.getElementById('outc');
+outCanvas.width = 16 * 6;
+outCanvas.height = 16 * 1;
+var ctx = showCanvas.getContext('2d');
+var outCtx = outCanvas.getContext('2d');
+
+var a = function a(n) {
+  return n.split(',').map(function (k) {
+    return {
+      x: parseInt(k),
+      f: !!k.match('f')
+    };
+  });
+};
+
+var ANIMS = {
+  rotate: a("0,2f,1,2"),
+  run_front: a("0,3,0f,3f"),
+  run_back: a("1,4,1f,4f"),
+  run_left: a("2,5"),
+  run_right: a("2f,5f"),
+  idle: a("3,3f")
+};
+var ANIM_NAMES = Object.keys(ANIMS);
+var currentAnimName = "run_front";
+var gTextures = {
+  loaded: 0,
+  requested: 0
+};
+loadAllTextures();
+var __appstarted = false;
+
+function loadTexture(key) {
+  var tex = new Image();
+  tex.src = "/imgs/spriteParts/" + key + ".png?v=" + Math.random();
+  gTextures.requested++;
+  gTextures[key] = tex;
+
+  tex.onload = function () {
+    gTextures.loaded++;
+
+    if (gTextures.loaded === gTextures.requested) {
+      if (__appstarted) {
+        updateOutCanvas();
+      } else {
+        startApp();
+      }
+    } else {
+      document.getElementById('loading').innerText = "loading... " + gTextures.loaded + " / " + gTextures.requested;
+    }
+  };
+}
+
+function loadAllTextures() {
+  loadTexture("hair");
+  loadTexture("base");
+  loadTexture("eyes");
+  loadTexture("mouth");
+  loadTexture("ears");
+  loadTexture("torso");
+  loadTexture("hands");
+}
+
+function startApp() {
+  __appstarted = true;
+  setupInput("eyes");
+  setupInput("mouth");
+  setupInput("ears");
+  setupInput("torso");
+  setupInput("hair");
+  setupColorInput();
+  setupColorMode();
+  updateOutCanvas();
+  updateAnimBtnText();
+  window.setInterval(animate, 16);
+  document.getElementById('loading').innerText = '';
+  document.getElementById('root').className = '';
+}
+
+function animate() {
+  //CONTEXT
+  ctx.clearRect(0, 0, 16, 16);
+  var t = Date.now ? Date.now() : +new Date();
+  var nt = parseInt(t / 200);
+  var anim = ANIMS[currentAnimName];
+  var len = anim.length;
+  var findex = nt % len;
+  var frame = anim[findex];
+  ctx.save();
+
+  if (frame.f) {
+    ctx.translate(16, 0);
+    ctx.scale(-1, 1);
+  }
+
+  ctx.drawImage(outCanvas, frame.x * 16, 0, 16, 16, 0, 0, 16, 16);
+  ctx.restore();
+}
+
+var animbtn = document.getElementById('animbtn');
+
+function updateAnimBtnText() {
+  animbtn.innerText = currentAnimName.replace("_", " ");
+}
+
+animbtn.onclick = function () {
+  var index = ANIM_NAMES.indexOf(currentAnimName);
+  currentAnimName = ANIM_NAMES[index + 1] || ANIM_NAMES[0];
+  updateAnimBtnText();
+};
+
+showCanvas.onclick = animbtn.onclick;
+var randomizebtn = document.getElementById('randomizebtn');
+
+randomizebtn.onclick = function () {
+  var inputs = document.getElementById('inputs').querySelectorAll('input');
+
+  for (var i = 0; i < inputs.length; i++) {
+    var input = inputs[i];
+    var key = input.id.replace("Input", "");
+    var max = PARTS_MAX[key];
+    var randval = Math.floor(Math.random() * (max + 1));
+    input.value = randval;
+    gParts[key] = randval;
+  }
+
+  updateOutCanvas();
+}; // 13 * 9 * 7 * 6 * 23 = 113'022
+
+
+var PARTS_MAX = {
+  eyes: 16,
+  mouth: 8,
+  ears: 6,
+  torso: 6,
+  hair: 22
+};
+var COLORS = [["#000000", "#787878", "#e8e8e8", "#ffffff", "Basic"], ["#7c3f58", "#eb6b6f", "#f9a875", "#fff6d3", "ICE CREAM GB PALETTE by Kerrie Lake"], ["#2d1b00", "#1e606e", "#5ab9a8", "#c4f0c2", "MIST GB PALETTE by Kerrie Lake"], ["#2c2137", "#764462", "#edb4a1", "#a96868", "RUSTIC GB PALETTE by Kerrie Lake"], ["#20283d", "#426e5d", "#e5b083", "#fbf7f3", "EN4 PALETTE by ENDESGA"], ["#4c1c2d", "#d23c4e", "#5fb1f5", "#eaf5fa", "GRAND DAD 4 PALETTE by Starlane"], ["#181010", "#84739c", "#f7b58c", "#ffefff", "POKEMON (SGB) PALETTE"], ["#2b2b26", "#706b66", "#a89f94", "#e0dbcd", "GRAFXKID GAMEBOY POCKET (GRAY) PALETTE by GrafxKid"], ["#000000", "#ff55ff", "#55ffff", "#ffffff", "CGA PALETTE 1 (HIGH) PALETTE"], ["#243137", "#3f503f", "#768448", "#acb56b", "NINTENDO GAMEBOY (ARNE) PALETTE by Arne"], ["#260016", "#ed008c", "#00bff3", "#daf3ec", "JB4 PALETTE by Haretro for his game Jet Boy"], ["#253b46", "#18865f", "#61d162", "#ebe7ad", "SWEET GUARANÃ PALETTE by MadPezkoh"], ["#4c625a", "#7b9278", "#abc396", "#dbf4b4", "GRAFXKID GAMEBOY POCKET (GREEN) PALETTE by GrafxKid"], ["#181B29", "#81F900", "#FFB626", "#315F00", "DR DINOS"], ["#181B29", "#F11012", "#FFB626", "#F2F2F2", "PANTHERS"], ["#181b29", "#b3760a", "#ffb626", "#cc9900", "YELLOW MELLOW"], ["#755ACD", "#000000", "#82E4C6", "#4c625a", "SQL by matty_twoshoes"], ["#181B29", "#FFA03A", "#0F2745", "#787878", "BATTLEBOT by Luce Carter"]];
+var gParts = {};
+var gColor = 0;
+var gColorMode = '012';
+
+function drawPart(key, forceY, forceFrame) {
+  var y = gParts[key] == null ? forceY : gParts[key]; // 0's falsy
+
+  if (y == null) {
+    return;
+  }
+
+  var w = 16 * 6;
+  var h = 16;
+
+  if (forceFrame || forceFrame === 0) {
+    outCtx.drawImage(gTextures[key], forceFrame * 16, y * 16, 16, 16, forceFrame * 16, 0, 16, 16);
+  } else {
+    outCtx.drawImage(gTextures[key], 0, y * 16, w, h, 0, 0, w, h);
+  }
+}
+
+function updateOutCanvas() {
+  outCtx.clearRect(0, 0, outCanvas.width, outCanvas.height);
+  outCtx.drawImage(gTextures['base'], 0, 0); // base
+
+  drawPart("hair");
+  drawPart("torso");
+  drawPart("ears");
+  drawPart("mouth");
+  drawPart("eyes");
+  drawPart("hands", 0); // back of the hair
+
+  drawPart("hair", null, 4);
+  drawPart("hair", null, 1);
+  var imageData = outCtx.getImageData(0, 0, outCanvas.width, outCanvas.height);
+  var data = imageData.data;
+
+  function C(n) {
+    return [parseInt(COLORS[gColor][n].substr(1, 2), 16), parseInt(COLORS[gColor][n].substr(3, 2), 16), parseInt(COLORS[gColor][n].substr(5, 2), 16)];
+  }
+
+  var mode = gColorMode.split('').map(function (n) {
+    return parseInt(n);
+  });
+  var dark = C(mode[0]);
+  var mid = C(mode[1]);
+  var light = C(mode[2]);
+
+  for (var i = 0; i < data.length; i += 4) {
+    var r = data[i];
+
+    if (r < 50) {
+      data[i + 0] = dark[0];
+      data[i + 1] = dark[1];
+      data[i + 2] = dark[2];
+      data[i + 3] = 255;
+    } else if (r < 180) {
+      data[i + 0] = mid[0];
+      data[i + 1] = mid[1];
+      data[i + 2] = mid[2];
+      data[i + 3] = 255;
+    } else if (r < 245) {
+      data[i + 0] = light[0];
+      data[i + 1] = light[1];
+      data[i + 2] = light[2];
+      data[i + 3] = 255;
+    } else {
+      data[i + 0] = 255;
+      data[i + 1] = 255;
+      data[i + 2] = 255;
+      data[i + 3] = 255;
+    }
+  }
+
+  outCtx.putImageData(imageData, 0, 0); // it's always a small file so this should be good enough:
+
+  var str = Object.keys(gParts).sort().map(function (k) {
+    return ("00" + gParts[k]).slice(-2);
+  }).join('') + "_" + gColor + gColorMode;
+  var output = document.getElementById('code');
+  output.innerText = " {\n    \"hair\": ".concat(document.getElementById('hairInput').value, ",\n    \"eyes\": ").concat(document.getElementById('eyesInput').value, ",\n    \"mouth\": ").concat(document.getElementById('mouthInput').value, ",\n    \"ears\": ").concat(document.getElementById('earsInput').value, ",\n    \"torso\": ").concat(document.getElementById('torsoInput').value, ",\n    \"hands\": 0,\n    \"gColorMode\": \"").concat(document.getElementById('colormode').innerText, "\",\n    \"color\": \"").concat(document.getElementById('colorinfo').innerText.toLowerCase(), "\"\n}"); // document.getElementById('serialized_input').value = s;
+}
+
+function prefixInputWithASpan(input, text) {
+  var span = document.createElement("span");
+  span.innerText = text;
+  input.parentElement.prepend(span);
+}
+
+function setupInput(key) {
+  var input = document.getElementById(key + "Input");
+  prefixInputWithASpan(input, key);
+  input.setAttribute('min', 0);
+  input.setAttribute('max', PARTS_MAX[key]);
+  input.value = parseInt(Math.random() * (PARTS_MAX[key] + 1));
+
+  var inputUpdate = function inputUpdate(e) {
+    gParts[key] = parseInt(e.target.value);
+    console.log("INPUT UPDATE", e.target.value, gParts);
+    updateOutCanvas();
+  };
+
+  inputUpdate({
+    target: input
+  });
+  input.onchange = inputUpdate;
+  input.oninput = inputUpdate;
+}
+
+;
+
+function setupColorInput() {
+  var key = 'color';
+  var input = document.getElementById(key + "Input");
+  prefixInputWithASpan(input, 'colors');
+  input.setAttribute('min', 0);
+  input.setAttribute('max', COLORS.length - 1);
+  input.value = 0;
+
+  var inputUpdate = function inputUpdate(e) {
+    gColor = parseInt(e.target.value);
+    console.log("COLOR UPDATE", e.target.value, gColor);
+    document.getElementById('colorinfo').innerText = COLORS[gColor][4];
+    updateOutCanvas();
+  };
+
+  inputUpdate({
+    target: input
+  });
+  input.onchange = inputUpdate;
+  input.oninput = inputUpdate;
+}
+
+function setupColorMode() {
+  var btn = document.getElementById("colormode");
+
+  btn.onclick = function () {
+    if (gColorMode == '012') {
+      gColorMode = '023';
+    } else if (gColorMode == '023') {
+      gColorMode = '013';
+    } else if (gColorMode == '013') {
+      gColorMode = '123';
+    } else {
+      gColorMode = '012';
+    }
+
+    btn.innerText = gColorMode;
+    updateOutCanvas();
+  };
+}
+/******/ })()
+;

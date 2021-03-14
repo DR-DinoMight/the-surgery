@@ -37,49 +37,60 @@ window.onload = () => {
         if (!user) {
 
             var prefectedChannelsUser = prefectedChannels[userstate['display-name'].toLowerCase()];
-           if (prefectedChannels[userstate['display-name'].toLowerCase()]) {
+            if (prefectedChannels[userstate['display-name'].toLowerCase()]) {
                 users.push(new UserObject(prefectedChannelsUser["twitch_username"], prefectedChannelsUser["sprite_data"]));
-            }else {
+            } else {
                 users.push(new UserObject(userstate['display-name']));
             }
 
             // console.log(users);
         }
         else{
-            let action,
-                time;
+            let action = null,
+                time = null;
 
+            // commands
             if (message.startsWith('!')) {
 
-                if (message.startsWith('!dance')) {
-                    action = 'rotate';
-                    time = parseInt(message.replace('!dance','').trim());
-                } else if (message.startsWith('!mleft')) {
-                    time = parseInt(message.replace('!mleft','').trim());
-                    action ='left';
-                } else if (message.startsWith('!mright')) {
-                    time = parseInt(message.replace('!mright','').trim());
-                    action = 'right';
-                }else if (message.startsWith('!mup')) {
-                    time = parseInt(message.replace('!mup','').trim());
-                    action = 'up';
-                }else if (message.startsWith('!mdown')) {
-                    time = parseInt(message.replace('!mdown','').trim());
-                    action = 'down';
-                }else if (message.startsWith('!idle')) {
-                    time = parseInt(message.replace('!idle','').trim());
-                    action = 'idle';
+                let command = message.split(" ")[0];
+
+                switch (command.toLowerCase()) {
+                    case '!dance':
+                        action = 'rotate';
+                        time = parseInt(message.replace('!dance','').trim());
+                        break;
+                    case '!idle':
+                        action = 'idle';
+                        time = parseInt(message.replace('!idle','').trim());
+                        break;
+                    case '!left':
+                        action = 'left';
+                        time = parseInt(message.replace('!left','').trim());
+                        break;
+                    case '!right':
+                        action = 'right';
+                        time = parseInt(message.replace('!right','').trim());
+                        break;
+                    case '!up':
+                        action = 'up';
+                        time = parseInt(message.replace('!up','').trim());
+                        break;
+                    case '!down':
+                        action = 'down';
+                        time = parseInt(message.replace('!down','').trim());
+                        break;
+
                 }
 
                 if (Number.isNaN(time) || time > 999999  || time < 0){
                     time = 1000;
                 }
-
-                user.updateActivity(
-                    action,
-                    time
-                );
             }
+
+            user.updateActivity(
+                action,
+                time
+            );
         }
     });
 
