@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class CreateSpriteRequest extends FormRequest
+class UpdateSpriteRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +25,8 @@ class CreateSpriteRequest extends FormRequest
     public function rules()
     {
         return [
-            'twitch_username' => ['required', 'unique:sprites,twitch_username', 'string', 'min:2', 'max:100'],
+            'twitch_username' => ['required',  Rule::unique('sprites', 'twitch_username')->ignore($this->id), 'string', 'min:2', 'max:100'],
+            'twitch_avatar' => ['required', 'string'],
             'sprite_data' => ['required']
         ];
     }
