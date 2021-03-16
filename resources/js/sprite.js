@@ -51,9 +51,7 @@ window.onload = () => {
 
             // commands
             if (message.startsWith('!')) {
-
                 let command = message.split(" ")[0];
-
                 switch (command.toLowerCase()) {
                     case '!dance':
                         action = 'rotate';

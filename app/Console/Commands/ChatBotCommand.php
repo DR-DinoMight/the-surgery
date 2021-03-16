@@ -114,7 +114,7 @@ class ChatBotCommand extends Command
 
     public function ping(string $msg): bool {
         $sent = $this->send('PONG :tmi.twitch.tv');
-        $this->output->writeln('PING PONG done');
+        // $this->output->writeln('PING PONG done');
         return $sent;
     }
 
@@ -124,6 +124,10 @@ class ChatBotCommand extends Command
         if (is_null($model)) return false;
 
         $this->output->writeln("{$model->username}: {$model->msg}");
+
+        if (Str::startsWith($model->msg, '!paging')) {
+            $this->send('PRIVMSG #dr_dinomight :Paging the doctor to chat! Paging @DR_DinoMight to Chat!');
+        }
 
         // eventually check for custom messages and send event
         return true;

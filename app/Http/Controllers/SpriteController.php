@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class SpriteController extends Controller
 {
-
     public function index() {
         $sprites = Sprite::all();
 
