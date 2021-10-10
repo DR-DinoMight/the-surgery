@@ -1,7 +1,7 @@
 import SpriteMaker from "./SpriteMaker.js";
 
 const SPRITE_INCREMENT = 48,
-      SPRITE_SIZE = 16,
+      SPRITE_SIZE = 32,
       MOVEMENT_SPEED = 1.2,
       MIN_ANIMATION_TIME = 3000,
       MAX_ANIMATION_TIME = 7000,
