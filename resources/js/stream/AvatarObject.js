@@ -185,7 +185,7 @@ class AvatarObject {
         ctx.fillRect(x, y, width+10, parseInt(font, 10)+10);
 
         /// text color
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = '#fff';
         // ctx.textAlign = "center";
         /// draw text on top
         ctx.fillText(txt, x+5, y+5);
