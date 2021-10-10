@@ -1,8 +1,8 @@
 import SpriteMaker from "./SpriteMaker.js";
 
 const SPRITE_INCREMENT = 48,
-      SPRITE_SIZE = 64,
-      MOVEMENT_SPEED = 1.5,
+      SPRITE_SIZE = 32,
+      MOVEMENT_SPEED = 1.2,
       MIN_ANIMATION_TIME = 3000,
       MAX_ANIMATION_TIME = 7000,
       TIMESPERFRAME = 250;
@@ -149,7 +149,7 @@ class AvatarObject {
         this.drawTextBG(context, message || this.message);
     }
 
-    drawTextBG(ctx, txt, font = '18px Pixeled') {
+    drawTextBG(ctx, txt, font = '14px Pixeled') {
         /// lets save current state as we make a lot of changes
         ctx.save();
 
