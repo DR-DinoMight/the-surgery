@@ -149,7 +149,7 @@ class AvatarObject {
         this.drawTextBG(context, message || this.message);
     }
 
-    drawTextBG(ctx, txt, font = '12px Pixeled') {
+    drawTextBG(ctx, txt, font = '10px Pixeled') {
         /// lets save current state as we make a lot of changes
         ctx.save();
 
