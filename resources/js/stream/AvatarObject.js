@@ -159,8 +159,6 @@ class AvatarObject {
         /// draw text from top - makes life easier at the moment
         ctx.textBaseline = 'top';
 
-        // set text color to white
-        ctx.fillText = '#fff';
 
         /// color for background
         ctx.fillStyle = 'rgb(204, 153, 0, 0.3)';
@@ -188,7 +186,7 @@ class AvatarObject {
         ctx.fillRect(x, y, width+10, parseInt(font, 10)+10);
 
         /// text color
-        ctx.fillStyle = '#0F111A';
+        ctx.fillStyle = '#ffffff';
         // ctx.textAlign = "center";
         /// draw text on top
         ctx.fillText(txt, x+5, y+5);
