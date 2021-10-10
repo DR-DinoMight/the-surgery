@@ -1,7 +1,7 @@
 import SpriteMaker from "./SpriteMaker.js";
 
 const SPRITE_INCREMENT = 48,
-      SPRITE_SIZE = 48,
+      SPRITE_SIZE = 32,
       MOVEMENT_SPEED = 1.2,
       MIN_ANIMATION_TIME = 3000,
       MAX_ANIMATION_TIME = 7000,
@@ -158,7 +158,6 @@ class AvatarObject {
 
         /// draw text from top - makes life easier at the moment
         ctx.textBaseline = 'top';
-
 
         /// color for background
         ctx.fillStyle = 'rgb(204, 153, 0, 0.3)';
