@@ -160,7 +160,7 @@ class AvatarObject {
         ctx.textBaseline = 'top';
 
         /// color for background
-        ctx.fillStyle = 'rgb(204, 153, 0, 0.3)';
+        ctx.fillStyle = 'rgb(204, 153, 0)';
 
         /// get width of text
         var width = ctx.measureText(txt).width;
